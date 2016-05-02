@@ -29,6 +29,7 @@ import resources
 from qc_sqrc_snrc_dockwidget import SQRCSNRCDockWidget
 import os.path
 
+import qgis
 
 import ogr, osr
 
@@ -80,22 +81,36 @@ class SQRCSNRC:
 
         ################################################################################
         ################################################################################
+        ################################################################################
 
+
+        # Listen to UI signals
         self.dockwidget.munLineEdit.textChanged.connect(self.mun_text_changed)
         self.dockwidget.munListWidget.currentItemChanged.connect(self.mun_current_changed)
         self.dockwidget.munListWidget.itemDoubleClicked.connect(self.mun_double_clicked)
         self.dockwidget.feuilListWidget.itemDoubleClicked.connect(self.feuil_double_clicked)
 
+        self.dockwidget.munRadioButton.toggled.connect(self.munRadioButton_toggled)
+        self.dockwidget.coordRadioButton.toggled.connect(self.coordRadioButton_toggled)
+        self.dockwidget.extRadioButton.toggled.connect(self.extRadioButton_toggled)
+
+        # Listen to mapCanvas signals
+        self.iface.mapCanvas().destinationCrsChanged.connect(self.mapcanvas_crs_changed)
+
+
+
+        # Initializing the plugin
         self.list_names_and_geoms()
         self.list_feuil_names_and_geoms()
 
-        self.dockwidget.SNRCRadioButton.setChecked(True)
-
+        # Setting a few default values
+        self.dockwidget.SQRCRadioButton.setChecked(True)
+        self.dockwidget.munRadioButton.setChecked(True)
 
 
         ################################################################################
         ################################################################################
-
+        ################################################################################
 
 
     # noinspection PyMethodMayBeStatic
@@ -257,13 +272,75 @@ class SQRCSNRC:
 
 
 
-    # This method is called when the LineEdit text changes (textChanged signal).
+
+    ###############################################
+    ###     Callback methods for UI signals     ###
+    ###############################################
+
+    # When the LineEdit (search box) text changes.
     def mun_text_changed(self):
         # Call the method to search through all municipalities
         self.mun_search()
 
 
 
+    # When double clicking an item in the municipality ListWidget
+    def mun_double_clicked(self):
+        self.add_mun_geom_to_qgis()
+
+
+
+
+    # When double clicking an item in the feuillet ListWidget
+    def feuil_double_clicked(self):
+        self.add_feuil_geom_to_qgis()
+
+
+
+
+    # When the selection changes in the municipality ListWidget
+    def mun_current_changed(self):
+        self.get_feuillet_number()
+
+
+
+
+
+
+    # When the Municipality radio button is checked
+    def munRadioButton_toggled(self):
+
+        if (self.dockwidget.munRadioButton.isChecked()):
+            self.adjust_ui_elements(self.get_checked_top_radio_btn())
+
+
+
+    # When the Coordinates radio button is checked
+    def coordRadioButton_toggled(self):
+        if (self.dockwidget.coordRadioButton.isChecked()):
+            self.adjust_ui_elements(self.get_checked_top_radio_btn())
+
+
+
+    # When the Extent radio button is checked
+    def extRadioButton_toggled(self):
+        if (self.dockwidget.extRadioButton.isChecked()):
+            self.adjust_ui_elements(self.get_checked_top_radio_btn())
+
+
+
+
+
+
+    def mapcanvas_crs_changed(self):
+        self.dockwidget.epsgLabel.setText("EPSG: " + self.get_project_epsg())
+
+
+
+
+    ###################################################################
+    ###     Initializing a few things when opening the plugin       ###
+    ###################################################################
 
 
     # This method is called only when initializing the plugin in QGIS.
@@ -341,6 +418,97 @@ class SQRCSNRC:
 
 
 
+    # Get current project EPSG code
+    def get_project_epsg(self):
+        canvas = self.iface.mapCanvas()
+        mapRenderer = canvas.mapRenderer()
+
+        srs = mapRenderer.destinationCrs()
+
+        return str(srs.authid())
+
+
+
+    ###########################################
+    ###     Manage UI functionnalities      ###
+    ###########################################
+
+
+    # Give information about which top radio button is checked (municipalité, coordonnées or extent)
+    def get_checked_top_radio_btn(self):
+        if (self.dockwidget.munRadioButton.isChecked()):
+            return "municipality"
+        elif (self.dockwidget.coordRadioButton.isChecked()):
+            return "coordinate"
+        elif (self.dockwidget.extRadioButton.isChecked()):
+            return "extent"
+        else:
+            return None
+
+
+
+
+    # Give information about which bottom radio button is checked (SQRC or SNRC)
+    def get_checked_bottom_radio_btn(self):
+        if (self.dockwidget.SNRCRadioButton.isChecked()):
+            return "SNRC"
+        elif (self.dockwidget.SQRCRadioButton.isChecked()):
+            return "SQRC"
+        else:
+            return None
+
+
+
+
+    # Make elements invisible, depending on which radio button is checked
+    def adjust_ui_elements(self, checked_button):
+        if (checked_button == "municipality"):
+            self.dockwidget.coordToolButton.setEnabled(False)
+            self.dockwidget.crsToolButton.hide()
+            self.dockwidget.epsgLabel.hide()
+            self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
+            self.dockwidget.munLineEdit.setEnabled(True)
+            #self.dockwidget.munListWidget.setEnabled(True)
+        if (checked_button == "coordinate"):
+            self.dockwidget.coordToolButton.setEnabled(True)
+            self.dockwidget.crsToolButton.show()
+            self.dockwidget.epsgLabel.show()
+            self.dockwidget.searchLabel.setText(u"Rechercher une coordonnée")
+            self.dockwidget.munLineEdit.setEnabled(True)
+            self.dockwidget.epsgLabel.setText("EPSG: " + self.get_project_epsg())
+            #self.dockwidget.munListWidget.setEnabled(True)
+        if (checked_button == "extent"):
+            self.dockwidget.coordToolButton.setEnabled(False)
+            self.dockwidget.crsToolButton.hide()
+            self.dockwidget.epsgLabel.hide()
+            self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
+            self.dockwidget.munLineEdit.setEnabled(False)
+            #self.dockwidget.munListWidget.setEnabled(True)
+
+
+
+
+
+
+
+
+
+    # Change EPSG code label according to the selected CRS
+    def change_epsg_label(self):
+        pass
+
+
+
+
+
+
+
+
+    ###################################
+    ###     Core of the plugin??    ###
+    ###################################
+
+
 
     # This method searches for the text in the LineEdit (search box) in the municipality list.
     def mun_search(self):
@@ -405,11 +573,6 @@ class SQRCSNRC:
 
 
 
-    def mun_double_clicked(self):
-        self.add_mun_geom_to_qgis()
-
-
-
 
     # Add the selected municipality geometry to the QGIS layer list (by double clicking)
     def add_mun_geom_to_qgis(self):
@@ -452,10 +615,11 @@ class SQRCSNRC:
 
 
 
-    def feuil_double_clicked(self):
-        self.add_feuil_geom_to_qgis()
 
 
+    ###############################################################################
+    ###     Manage clicking in the municipality list to show the map index      ###
+    ###############################################################################
 
 
     # Add the selected feuillet geometry to the QGIS layer list (by double clicking)
@@ -505,12 +669,6 @@ class SQRCSNRC:
 
 
 
-    def mun_current_changed(self):
-        self.get_feuillet_number()
-
-
-
-
 
     def get_feuillet_number(self):
         self.dockwidget.feuilListWidget.clear()
@@ -520,15 +678,7 @@ class SQRCSNRC:
 
 
 
-    def get_checked_radio_button(self):
-        if (self.dockwidget.SNRCRadioButton.isChecked()):
-            #return self.dockwidget.SNRCRadioButton
-            return "SNRC"
-        elif (self.dockwidget.SQRCRadioButton.isChecked()):
-            #return self.dockwidget.SQRCRadioButton
-            return "SQRC"
-        else:
-            return None
+
 
 
     def get_feuillet_geom(self, feuillet):
