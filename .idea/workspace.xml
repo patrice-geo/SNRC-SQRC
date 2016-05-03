@@ -2,11 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47cda69e-ae6c-4ff1-9826-196ffd3c1452" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qc_sqrc_snrc_dockwidget_base.ui" afterPath="$PROJECT_DIR$/qc_sqrc_snrc_dockwidget_base.ui" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/in_data/index_SQRC_20k.sbn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/in_data/index_SQRC_20k.sbx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/in_data/mun.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/21E05-200-0101.dbf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/21E05-200-0101.shp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/21E05-200-0101.shx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/21E05-200-0201.dbf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/21E05-200-0201.shp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/21E05-200-0201.shx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/31H08-200-0102.dbf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/31H08-200-0102.shp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/31H08-200-0102.shx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/31H08-200-0202.dbf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/31H08-200-0202.shp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/31H08-200-0202.shx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/TNO aquatique du TE de Sherbrooke.dbf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/TNO aquatique du TE de Sherbrooke.shp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_data/TNO aquatique du TE de Sherbrooke.shx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/in_data/index_SQRC_20k.dbf" afterPath="$PROJECT_DIR$/in_data/index_SQRC_20k.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/in_data/index_SQRC_20k.shp" afterPath="$PROJECT_DIR$/in_data/index_SQRC_20k.shp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/in_data/index_SQRC_20k.shx" afterPath="$PROJECT_DIR$/in_data/index_SQRC_20k.shx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/metadata.txt" afterPath="$PROJECT_DIR$/metadata.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/in_data/index_SQRC_20k.prj" afterPath="$PROJECT_DIR$/in_data/index_SQRC_20k.prj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qc_sqrc_snrc.py" afterPath="$PROJECT_DIR$/qc_sqrc_snrc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources.py" afterPath="$PROJECT_DIR$/resources.py" />
     </list>
     <ignored path="SQRCSNRC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +51,21 @@
       <file leaf-file-name="qc_sqrc_snrc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66560507">
-              <caret line="340" column="71" selection-start-line="340" selection-start-column="71" selection-end-line="340" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.11378556">
+              <caret line="701" column="52" selection-start-line="701" selection-start-column="52" selection-end-line="701" selection-end-column="52" />
               <folding>
                 <element signature="e#1195#1274#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="faucon.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,6 +117,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -108,7 +139,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -126,17 +156,24 @@
       <option name="number" value="Default" />
       <updated>1462025206364</updated>
     </task>
+    <task id="LOCAL-00001" summary="UI design and functionnalities">
+      <created>1462224048095</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1462224048095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25239617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2657082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -146,6 +183,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -163,11 +201,43 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="UI design and functionnalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI design and functionnalities" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1195#1274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="539" column="0" selection-start-line="539" selection-start-column="0" selection-end-line="540" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1195#1274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -272,14 +342,15 @@
     <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="576" column="8" selection-start-line="576" selection-start-column="8" selection-end-line="576" selection-end-column="99" />
+          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66560507">
-          <caret line="340" column="71" selection-start-line="340" selection-start-column="71" selection-end-line="340" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.11378556">
+          <caret line="701" column="52" selection-start-line="701" selection-start-column="52" selection-end-line="701" selection-end-column="52" />
           <folding>
             <element signature="e#1195#1274#0" expanded="true" />
           </folding>
