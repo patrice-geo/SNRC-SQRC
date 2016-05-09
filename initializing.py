@@ -3,6 +3,7 @@
 import gdal, ogr
 import os
 
+
 class Initialization:
 
     def __init__(self, plugin_dir, iface):
@@ -21,6 +22,9 @@ class Initialization:
 
     def restore_gdal_encoding(self):
         gdal.SetConfigOption('SHAPE_ENCODING', self.gdal_encoding)
+
+
+
 
 
 
@@ -68,6 +72,10 @@ class Initialization:
 
 
 
+
+
+
+
     def list_feuilSQRC_names_and_geoms(self):
         # Set the driver for OGR (using .shp as input files)
         ogrDriverFeuil = ogr.GetDriverByName('ESRI Shapefile')
@@ -106,6 +114,11 @@ class Initialization:
 
 
 
+
+
+
+
+
     def list_feuilSNRC_names_and_geoms(self):
         # Set the driver for OGR (using .shp as input files)
         ogrDriverFeuil = ogr.GetDriverByName('ESRI Shapefile')
@@ -138,6 +151,12 @@ class Initialization:
 
 
         #del ogrDriverFeuil
+
+
+
+
+
+
 
 
 
