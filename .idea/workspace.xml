@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47cda69e-ae6c-4ff1-9826-196ffd3c1452" name="Default" comment="Major changes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crcross.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/geographic.png" />
+    <list default="true" id="47cda69e-ae6c-4ff1-9826-196ffd3c1452" name="Default" comment="Added icons">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SQRCSNRC.iws" />
@@ -332,7 +330,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462767543060</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added icons">
+      <created>1462767723919</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1462767723919</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -374,7 +378,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="UI design and functionnalities" />
     <MESSAGE value="Major changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major changes" />
+    <MESSAGE value="Added icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added icons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
