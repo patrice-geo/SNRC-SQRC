@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>380</width>
-    <height>328</height>
+    <height>330</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -57,6 +57,9 @@
           <height>0</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string>Double-cliquez un item de la liste pour ajouter la géométrie à la liste des couches</string>
+        </property>
        </widget>
       </item>
      </layout>
@@ -104,31 +107,14 @@
           </attribute>
          </widget>
         </item>
-        <item alignment="Qt::AlignLeft">
+        <item>
          <widget class="QToolButton" name="coordToolButton">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>22</width>
-            <height>22</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string>Cliquez sur ce bouton pour ensuite cliquer sur un point dans la map.</string>
-          </property>
-          <property name="statusTip">
-           <string/>
-          </property>
-          <property name="whatsThis">
-           <string/>
-          </property>
-          <property name="accessibleDescription">
-           <string>Cliquez sur ce bouton pour ensuite cliquer sur un point dans la map.</string>
-          </property>
           <property name="text">
-           <string>...</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>geographic.png</normaloff>geographic.png</iconset>
           </property>
          </widget>
         </item>
@@ -188,35 +174,6 @@
           </property>
          </widget>
         </item>
-        <item alignment="Qt::AlignLeft">
-         <widget class="QToolButton" name="crsToolButton">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>22</width>
-            <height>22</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string>Choisir un système de référence spatial (CRS)</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>geographic.png</normaloff>geographic.png</iconset>
-          </property>
-         </widget>
-        </item>
         <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
@@ -253,6 +210,35 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QToolButton" name="crsToolButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>22</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Choisir un système de référence spatial (CRS)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>geographic.png</normaloff>geographic.png</iconset>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item>
@@ -265,7 +251,7 @@
       <item>
        <widget class="QListWidget" name="munListWidget">
         <property name="toolTip">
-         <string/>
+         <string>Double-cliquez sur un item de la liste pour ajouter la géométrie à la liste des couches</string>
         </property>
        </widget>
       </item>
@@ -308,7 +294,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

@@ -20,7 +20,7 @@
  *                                                                         *
  ***************************************************************************/
 """
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
+from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt, QTimer
 from PyQt4.QtGui import QAction, QIcon, QCursor
 # Initialize Qt resources from file resources.py
 import resources
@@ -31,7 +31,7 @@ import os.path
 
 import qgis
 
-import ogr, osr
+import gdal, ogr, osr
 
 
 
@@ -83,6 +83,24 @@ class SQRCSNRC:
         ################################################################################
         ################################################################################
 
+        self.municipality_text = ""
+        self.coordinate_text = ""
+        self.selected_item = ""
+
+
+        # Initializing the plugin
+        self.set_gdal_encoding()
+        self.list_names_and_geoms()
+        self.list_feuilSQRC_names_and_geoms()
+        self.list_feuilSNRC_names_and_geoms()
+        self.restore_gdal_encoding()
+
+        # Setting a few default values
+        self.dockwidget.SQRCRadioButton.setChecked(True)
+        self.dockwidget.munRadioButton.setChecked(True)
+
+        self.coord_captured = True
+
 
         # Listen to UI signals
         self.dockwidget.munLineEdit.textChanged.connect(self.mun_text_changed)
@@ -96,21 +114,13 @@ class SQRCSNRC:
         self.dockwidget.coordRadioButton.toggled.connect(self.coordRadioButton_toggled)
         self.dockwidget.extRadioButton.toggled.connect(self.extRadioButton_toggled)
 
+        self.dockwidget.SNRCRadioButton.toggled.connect(self.SNRCRadioButton_toggled)
+        self.dockwidget.SQRCRadioButton.toggled.connect(self.SQRCRadioButton_toggled)
+
         # Listen to mapCanvas signals
         self.iface.mapCanvas().destinationCrsChanged.connect(self.mapcanvas_crs_changed)
-        self.iface.mapCanvas().scaleChanged.connect(self.canvas_clicked)
+        self.iface.mapCanvas().scaleChanged.connect(self.canvas_clicked)        # Supposed to be a mouse click event
 
-
-        # Initializing the plugin
-        self.list_names_and_geoms()
-        self.list_feuilSQRC_names_and_geoms()
-        self.list_feuilSNRC_names_and_geoms()
-
-        # Setting a few default values
-        self.dockwidget.SQRCRadioButton.setChecked(True)
-        self.dockwidget.munRadioButton.setChecked(True)
-
-        self.coord_captured = True
 
 
         ################################################################################
@@ -285,7 +295,7 @@ class SQRCSNRC:
     # When the LineEdit (search box) text changes.
     def mun_text_changed(self):
         # Call the method to search through all municipalities
-        self.mun_search()
+        self.timed_action(500, self.mun_search)
 
 
 
@@ -305,7 +315,17 @@ class SQRCSNRC:
 
     # When the selection changes in the municipality ListWidget
     def mun_current_changed(self):
-        self.get_feuillet_number()
+
+        try:
+            if (str(self.dockwidget.munListWidget.currentItem().text()).strip != "") and (self.dockwidget.munListWidget.currentItem().text() != None):
+                self.selected_item = self.dockwidget.munListWidget.currentItem().text()
+
+        except:
+            return
+
+        if (self.get_checked_top_radio_btn() == "municipality"):
+            self.timed_action(500, self.get_feuillet_number)
+
 
 
 
@@ -317,6 +337,9 @@ class SQRCSNRC:
 
         if (self.dockwidget.munRadioButton.isChecked()):
             self.adjust_ui_elements(self.get_checked_top_radio_btn())
+        else:
+            self.municipality_text = self.dockwidget.munLineEdit.text()
+
 
 
 
@@ -325,7 +348,8 @@ class SQRCSNRC:
     def coordRadioButton_toggled(self):
         if (self.dockwidget.coordRadioButton.isChecked()):
             self.adjust_ui_elements(self.get_checked_top_radio_btn())
-
+        else:
+            self.coordinate_text = self.dockwidget.munLineEdit.text()
 
 
 
@@ -342,8 +366,14 @@ class SQRCSNRC:
 
 
     def canvas_clicked(self):
+
+        if (self.get_checked_top_radio_btn() == "extent"):
+            self.timed_action(1000, self.get_intersects_geom)
+
         if (self.get_checked_top_radio_btn() == "coordinate") and (self.coord_captured == False):
             self.stop_coord_capture()
+
+
 
 
 
@@ -355,9 +385,49 @@ class SQRCSNRC:
 
 
 
+    # When the SNRCRadioButton is toggled
+    def SNRCRadioButton_toggled(self):
+        if (self.dockwidget.SNRCRadioButton.isChecked()):
+            if (self.get_checked_top_radio_btn() == "extent"):
+                self.timed_action(1000, self.get_feuillet_number)
+            else:
+                try:
+                    self.selected_item = self.dockwidget.munListWidget.currentItem().text()
+                    self.timed_action(1000, self.get_feuillet_number)
+                except:
+                    self.timed_action(1000, self.get_feuillet_number)
+
+    # When the SQRCRadioButton is toggled
+    def SQRCRadioButton_toggled(self):
+        if (self.dockwidget.SQRCRadioButton.isChecked()):
+            if (self.get_checked_top_radio_btn() == "extent"):
+                self.timed_action(1000, self.get_feuillet_number)
+            else:
+                try:
+                    self.selected_item = self.dockwidget.munListWidget.currentItem().text()
+                    self.timed_action(1000, self.get_feuillet_number)
+                except:
+                    self.timed_action(1000, self.get_feuillet_number)
+
     ###################################################################
     ###     Initializing a few things when opening the plugin       ###
     ###################################################################
+
+
+
+    # GDAL Config options
+    def set_gdal_encoding(self):
+        self.gdal_encoding = gdal.GetConfigOption('SHAPE_ENCODING')
+        gdal.SetConfigOption('SHAPE_ENCODING', 'LATIN1')
+
+
+
+    def restore_gdal_encoding(self):
+        gdal.SetConfigOption('SHAPE_ENCODING', self.gdal_encoding)
+
+
+
+
 
 
     # This method is called only when initializing the plugin in QGIS.
@@ -384,6 +454,7 @@ class SQRCSNRC:
         for munFeature in munLayer:
             # Get the municipality name
             mun_name = munFeature.GetField("mus_nm_mun")
+
             # Get the municipality geometry
             munGeom = munFeature.GetGeometryRef()
             # If the municipality name is not already in the municipality list, then add it
@@ -523,6 +594,11 @@ class SQRCSNRC:
 
     # Make elements invisible, depending on which radio button is checked
     def adjust_ui_elements(self, checked_button):
+        self.dockwidget.munListWidget.clear()
+        self.dockwidget.feuilListWidget.clear()
+
+        self.dockwidget.munLineEdit.clear()
+
         if (checked_button == "municipality"):
             self.dockwidget.coordToolButton.setEnabled(False)
             self.dockwidget.crsToolButton.hide()
@@ -530,7 +606,7 @@ class SQRCSNRC:
             self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
             self.dockwidget.munLineEdit.setEnabled(True)
             self.dockwidget.munListWidget.setEnabled(True)
-            #self.dockwidget.munListWidget.setEnabled(True)
+            self.dockwidget.munLineEdit.setText(self.municipality_text)
         if (checked_button == "coordinate"):
             self.dockwidget.coordToolButton.setEnabled(True)
             self.dockwidget.crsToolButton.show()
@@ -538,18 +614,19 @@ class SQRCSNRC:
             self.dockwidget.searchLabel.setText(u"Rechercher une coordonnée")
             self.dockwidget.munLineEdit.setEnabled(True)
             self.dockwidget.epsgLabel.setText(self.get_project_epsg())
-            self.dockwidget.munListWidget.setEnabled(False)
-            #self.dockwidget.munListWidget.setEnabled(True)
+            self.dockwidget.munListWidget.setEnabled(True)
+            self.dockwidget.munLineEdit.setText(self.coordinate_text)
         if (checked_button == "extent"):
             self.dockwidget.coordToolButton.setEnabled(False)
             self.dockwidget.crsToolButton.hide()
             self.dockwidget.epsgLabel.hide()
             self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
             self.dockwidget.munLineEdit.setEnabled(False)
-            self.dockwidget.munListWidget.setEnabled(False)
-            #self.dockwidget.munListWidget.setEnabled(True)
+            self.dockwidget.munListWidget.setEnabled(True)
 
-        self.dockwidget.munLineEdit.clear()
+            self.timed_action(1000, self.get_intersects_geom)
+
+
 
 
 
@@ -566,8 +643,7 @@ class SQRCSNRC:
     def start_coord_capture(self):
         self.coord_captured = False
         self.previous_cursor = self.iface.mapCanvas().cursor()
-        cursor = QCursor()
-        cursor.setShape(Qt.CrossCursor)
+        cursor = QCursor(self.previous_cursor)
         self.iface.mapCanvas().setCursor(cursor)
 
 
@@ -575,11 +651,20 @@ class SQRCSNRC:
 
     def stop_coord_capture(self):
         self.coord_captured = True
-        print "stop capture"
-        #self.iface.mapCanvas().setCursor(self.previous_cursor)
+
+
+
+        # Set the cursor to the original shape
+        #cursor = QCursor(self.previous_cursor)
+        #self.iface.mapCanvas().setCursor(cursor)
 
         # Get the mouse XY position
         mouse_coordinates = self.iface.mapCanvas().mouseLastXY()
+
+
+        self.point = self.iface.mapCanvas().getCoordinateTransform().toMapCoordinates(mouse_coordinates)
+
+
         # Get the CRS coordinates from the XY mouse position
         self.captured_coordinate = str(self.iface.mapCanvas().getCoordinateTransform().toMapCoordinates(mouse_coordinates))
 
@@ -592,9 +677,22 @@ class SQRCSNRC:
 
 
 
+
+
+
+
     ##########################################
     ###     Search part of the plugin??    ###
     ##########################################
+
+    def timed_action(self, ms, method):
+        # Attendre 8 secondes avant d'effacer le contenu de la Status Bar et d'enlever la Message Bar
+        self.timer = QTimer()
+        self.timer.setInterval(ms)   # 1000 ms = 1 secondes
+        self.timer.setSingleShot(True)
+        # Quand le timer fini, appeller la fonction pour effacer
+        self.timer.timeout.connect(method)
+        self.timer.start()
 
 
 
@@ -622,7 +720,10 @@ class SQRCSNRC:
     # Apparently, I need to .clone() the geometry
 
     def get_intersects_geom(self):
-        print "intesttet"
+
+        # Clear the "Feuillets" listWidget
+        self.dockwidget.feuilListWidget.clear()
+
 
         if (self.get_checked_top_radio_btn() == "municipality"):
             #print self.mun_geom_list
@@ -637,56 +738,69 @@ class SQRCSNRC:
             for munFeature in munLayer:
                 mun_name = munFeature.GetField("mus_nm_mun")
                 if (mun_name == self.selected_item):
-                    munGeom = munFeature.GetGeometryRef().Clone()         # .Clone() avoids QGIS from crashing...
+                    geom = munFeature.GetGeometryRef().Clone()         # .Clone() avoids QGIS from crashing...
 
 
         if (self.get_checked_top_radio_btn() == "coordinate"):
-            print "tour peteself.mun_geom_list"
+
+            # Clear the "Municipality" listWidget
+            self.dockwidget.munListWidget.clear()
+
+            # Create a geometry from the selected point
+            geom = ogr.Geometry(ogr.wkbPoint)
+
+            try:
+                # Get the search box text and "split" it
+                splitted = str(self.dockwidget.munLineEdit.text()).split(',')
+
+                # Add a point in the geometry
+                geom.AddPoint(float(splitted[0]), float(splitted[1]))
+            except:
+                return
+
+
+
+            # Get the intersecting municipality
+            # Get Driver
+            ogrDriverMun = ogr.GetDriverByName('ESRI Shapefile')
+            # Open the input SQRC feuillet shapefile
+            feuil_ds = ogrDriverMun.Open(self.plugin_dir + os.sep + "in_data" + os.sep + "mun.shp")
+            # Get the layer from the shapefile
+            munLayer = feuil_ds.GetLayer()
+
+            for munFeature in munLayer:
+                #mun_name = munFeature.GetField("mus_nm_mun")
+                munGeom = munFeature.GetGeometryRef().Clone()         # .Clone() avoids QGIS from crashing...
+                if (geom.Intersects(munGeom)):
+
+                    self.dockwidget.munListWidget.addItem(munFeature.GetField("mus_nm_mun"))
+
+
+
+        if (self.get_checked_top_radio_btn() == "extent"):
+
+            # Get the extent as a WktPolygon
+            self.extentWktPolygon = self.iface.mapCanvas().extent().asWktPolygon()
+
+            # Clear the "Municipality" listWidget
+            self.dockwidget.munListWidget.clear()
+
+            # Create the extent polygon
+            geom = ogr.CreateGeometryFromWkt(self.extentWktPolygon)
 
             # Get Driver
-            ogrDriverCoord = ogr.GetDriverByName('ESRI Shapefile')
+            ogrDriverMun = ogr.GetDriverByName('ESRI Shapefile')
+            # Open the input SQRC feuillet shapefile
+            feuil_ds = ogrDriverMun.Open(self.plugin_dir + os.sep + "in_data" + os.sep + "mun.shp")
+            # Get the layer from the shapefile
+            munLayer = feuil_ds.GetLayer()
 
-            splitted = str(self.dockwidget.munLineEdit.text()).split(',')
+            for munFeature in munLayer:
+                #mun_name = munFeature.GetField("mus_nm_mun")
+                munGeom = munFeature.GetGeometryRef().Clone()         # .Clone() avoids QGIS from crashing...
+                if (geom.Intersects(munGeom)):
 
-            # Delete the datasource if exists
-            if os.path.exists(self.plugin_dir + os.sep + "out_data" + os.sep + "temp_point.shp"):
-                ogrDriverCoord.DeleteDataSource(self.plugin_dir + os.sep + "out_data" + os.sep + "temp_point.shp")
-
-            tempPointDS = ogrDriverCoord.CreateDataSource(self.plugin_dir + os.sep + "out_data" + os.sep + "temp_point.shp")
-
-            tempPointLayer = tempPointDS.CreateLayer("temp_point", geom_type=ogr.wkbPoint)
-
-            tempPointFeat = ogr.Feature(tempPointLayer.GetLayerDefn())
-
-            tempPointGeom = ogr.Geometry(ogr.wkbPoint)
-            tempPointGeom.AddPoint(float(splitted[0]), float(splitted[1]))
-
-            geom = ogr.Geometry(ogr.wkbPoint)
-            tempPointFeat.SetGeometry(tempPointGeom)
-            tempPointLayer.CreateFeature(tempPointFeat)
-
-            temp_ds = ogrDriverCoord.Open(self.plugin_dir + os.sep + "out_data" + os.sep + "temp_point.shp")
-            temp_layer = temp_ds.GetLayer()
-
-            for feat in temp_layer:
-                geom = feat.GetGeometryRef()
-
-
-
-        # if (self.get_checked_top_radio_btn() == "extent"):
-        #     #print self.mun_geom_list
-        #
-        #     # Get Driver
-        #     ogrDriverMun = ogr.GetDriverByName('ESRI Shapefile')
-        #     # Open the input SQRC feuillet shapefile
-        #     feuil_ds = ogrDriverMun.Open(self.plugin_dir + os.sep + "in_data" + os.sep + "mun.shp")
-        #     # Get the layer from the shapefile
-        #     munLayer = feuil_ds.GetLayer()
-        #
-        #     for munFeature in munLayer:
-        #         mun_name = munFeature.GetField("mus_nm_mun")
-        #         if (mun_name == self.selected_item):
-        #             munGeom = munFeature.GetGeometryRef().Clone()         # .Clone() avoids QGIS from crashing...
+                    self.dockwidget.munListWidget.addItem(munFeature.GetField("mus_nm_mun"))
 
 
 
@@ -706,18 +820,16 @@ class SQRCSNRC:
                 feuilSNRCGeom = feuilSNRCFeature.GetGeometryRef()
 
                 if (self.get_checked_top_radio_btn() == "municipality"):
-                    if munGeom.Intersects(feuilSNRCGeom):
+                    if geom.Intersects(feuilSNRCGeom):
                         self.dockwidget.feuilListWidget.addItem(feuilSNRC_num)
 
                 if (self.get_checked_top_radio_btn() == "coordinate"):
-                    print "coord intersects"
                     if geom.Intersects(feuilSNRCGeom):
-                        print "coord intersects"
                         self.dockwidget.feuilListWidget.addItem(feuilSNRC_num)
 
-                # if (self.get_checked_top_radio_btn() == "extent"):
-                #     if ExtGeom.Intersects(feuilSNRCGeom):
-                #         self.dockwidget.feuilListWidget.addItem(feuilSNRC_num)
+                if (self.get_checked_top_radio_btn() == "extent"):
+                    if geom.Intersects(feuilSNRCGeom):
+                        self.dockwidget.feuilListWidget.addItem(feuilSNRC_num)
 
 
 
@@ -733,16 +845,16 @@ class SQRCSNRC:
                 feuilSQRCGeom = feuilSQRCFeature.GetGeometryRef()
 
                 if (self.get_checked_top_radio_btn() == "municipality"):
-                    if munGeom.Intersects(feuilSQRCGeom):
+                    if geom.Intersects(feuilSQRCGeom):
                         self.dockwidget.feuilListWidget.addItem(feuilSQRC_num)
 
                 if (self.get_checked_top_radio_btn() == "coordinate"):
                     if geom.Intersects(feuilSQRCGeom):
                         self.dockwidget.feuilListWidget.addItem(feuilSQRC_num)
 
-                # if (self.get_checked_top_radio_btn() == "extent"):
-                #     if ExtGeom.Intersects(feuilSQRCGeom):
-                #         self.dockwidget.feuilListWidget.addItem(feuilSQRC_num)
+                if (self.get_checked_top_radio_btn() == "extent"):
+                    if geom.Intersects(feuilSQRCGeom):
+                        self.dockwidget.feuilListWidget.addItem(feuilSQRC_num)
 
 
        # del ogrDriverMun, ogrDriverFeuil, feuilSQRC_num, feui
@@ -811,14 +923,22 @@ class SQRCSNRC:
         # Get Driver
         ogrDriverFeuil = ogr.GetDriverByName('ESRI Shapefile')
         # Open the input SQRC feuillet shapefile
-        feuil_ds = ogrDriverFeuil.Open(self.plugin_dir + os.sep + "in_data" + os.sep + "index_SQRC_20k.shp")
+        if (self.get_checked_bottom_radio_btn() == "SQRC"):
+            feuil_ds = ogrDriverFeuil.Open(self.plugin_dir + os.sep + "in_data" + os.sep + "index_SQRC_20k.shp")
+        # Open the input SQRC feuillet shapefile
+        if (self.get_checked_bottom_radio_btn() == "SNRC"):
+            feuil_ds = ogrDriverFeuil.Open(self.plugin_dir + os.sep + "in_data" + os.sep + "nts_snrc_50k.shp")
         # Get the layer from the shapefile
         feuilLayer = feuil_ds.GetLayer()
         self.selected_feuil = self.dockwidget.feuilListWidget.currentItem().text()
 
 
         for feuilFeature in feuilLayer:
-            feuil_num = feuilFeature.GetField("feuille")
+            if (self.get_checked_bottom_radio_btn() == "SQRC"):
+                feuil_num = feuilFeature.GetField("feuille")
+            if (self.get_checked_bottom_radio_btn() == "SNRC"):
+                feuil_num = feuilFeature.GetField("nts_snrc")
+
             if (feuil_num == self.selected_feuil):
                 feuilGeom = feuilFeature.GetGeometryRef().Clone()         # .Clone() avoids QGIS from crashing...
 
@@ -859,8 +979,7 @@ class SQRCSNRC:
 
     def get_feuillet_number(self):
         self.dockwidget.feuilListWidget.clear()
-        # if (str(self.dockwidget.munListWidget.currentItem().text()).strip != ""):
-        self.selected_item = self.dockwidget.munListWidget.currentItem().text()
+
         # print selected_item
         self.get_intersects_geom()
 
