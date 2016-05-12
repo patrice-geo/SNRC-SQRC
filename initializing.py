@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import gdal, ogr
+import gdal
+import ogr
+
 import os
 
 

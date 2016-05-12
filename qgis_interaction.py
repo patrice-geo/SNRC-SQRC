@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import ogr, gdal
+import ogr
+import osr
 import os
+from qgis.core import QgsVectorLayer, QgsMapLayerRegistry
 
 class InterractionQgis:
 
-    def __init__(self, dockwidget, iface, ManageUI, plugin_dir ):
+    def __init__(self, dockwidget, iface, ManageUI, plugin_dir, Initialization):
         self.dockwidget = dockwidget
         self.iface = iface
         self.ManageUI = ManageUI
         self.plugin_dir = plugin_dir
+        self.Initialization = Initialization
 
 
     # Add the selected feuillet geometry to the QGIS layer list (by double clicking)
@@ -40,9 +43,13 @@ class InterractionQgis:
         if os.path.exists(self.plugin_dir + os.sep + "out_data" + os.sep + str(self.selected_feuil) + ".shp"):
             ogrDriverFeuil.DeleteDataSource(self.plugin_dir + os.sep + "out_data" + os.sep + str(self.selected_feuil) + ".shp")
 
+        # Projections
+        spatialRef = osr.SpatialReference()
+        spatialRef.ImportFromEPSG(int(self.Initialization.get_project_epsg().strip("EPSG: ")))
+
         # Create the shapefile
         feuilOutDataSource = ogrDriverFeuil.CreateDataSource(self.plugin_dir + os.sep + "out_data" + os.sep + str(self.selected_feuil) + ".shp")
-        feuilOutLayer = feuilOutDataSource.CreateLayer(str(self.selected_feuil), geom_type=ogr.wkbPolygon)
+        feuilOutLayer = feuilOutDataSource.CreateLayer(str(self.selected_feuil), spatialRef, geom_type=ogr.wkbPolygon)
 
         # Add an ID field
         idField = ogr.FieldDefn("id", ogr.OFTInteger)
@@ -88,9 +95,13 @@ class InterractionQgis:
             ogrDriverMun.DeleteDataSource(self.plugin_dir + os.sep + "out_data" + os.sep + self.ManageUI.get_selected_mun() + ".shp")
 
 
+        # Projections
+        spatialRef = osr.SpatialReference()
+        spatialRef.ImportFromEPSG(int(self.Initialization.get_project_epsg().strip("EPSG: ")))
+
         # Create the shapefile
         munOutDataSource = ogrDriverMun.CreateDataSource(self.plugin_dir + os.sep + "out_data" + os.sep + self.ManageUI.get_selected_mun() + ".shp")
-        munOutLayer = munOutDataSource.CreateLayer(str(self.ManageUI.get_selected_mun()), geom_type=ogr.wkbPolygon)
+        munOutLayer = munOutDataSource.CreateLayer(str(self.ManageUI.get_selected_mun()), spatialRef, geom_type=ogr.wkbPolygon)
 
         # Add an ID field
         idField = ogr.FieldDefn("id", ogr.OFTInteger)
@@ -107,7 +118,19 @@ class InterractionQgis:
         munOutFeature.SetField("id", 1)
         munOutLayer.CreateFeature(munOutFeature)
 
+
+
+
         # Add layer to QGIS interface
+
+        # layerToAdd = QgsVectorLayer(self.plugin_dir + os.sep + "out_data" + os.sep + self.ManageUI.get_selected_mun() + ".shp", "MyLayer", "ogr")
+        # crs = layerToAdd.crs()
+        # #crs.createFromId(int(self.Initialization.get_project_epsg().strip("EPSG: ")))
+        # crs.createFromId(26919)
+        # layerToAdd.setCrs(crs)
+        # QgsMapLayerRegistry.instance().addMapLayer(layerToAdd)
+
+
         self.iface.addVectorLayer(self.plugin_dir + os.sep + "out_data" + os.sep + self.ManageUI.get_selected_mun() + ".shp", self.ManageUI.get_selected_mun(), "ogr")
 
         del ogrDriverMun

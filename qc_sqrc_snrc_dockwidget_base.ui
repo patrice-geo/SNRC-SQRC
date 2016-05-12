@@ -213,7 +213,7 @@
         <item>
          <widget class="QToolButton" name="crsToolButton">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Minimum">

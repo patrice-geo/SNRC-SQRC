@@ -2,10 +2,11 @@
 
 from PyQt4.QtCore import QTimer
 
-import gdal, ogr
+import ogr
 import os
 
-class MainProcess():
+
+class MainProcess:
 
     def __init__(self, dockwidget, iface, ManageUI, Initialization, plugin_dir):
         self.dockwidget = dockwidget
@@ -15,41 +16,50 @@ class MainProcess():
         self.plugin_dir = plugin_dir
 
 
+
+    # This is a simple timer to delay actions.
+    # Using the timer avoids triggering actions instantly thus giving a more fluid feeling to the plugin
     def timed_action(self, ms, method):
         self.timer = QTimer()
-        self.timer.setInterval(ms)   # 1000 ms = 1 secondes
+        # Setting the interval of the timer, using the value specified in argument
+        self.timer.setInterval(ms)   # 1000 ms = 1 seconds
+        # The timer is single shot (stops after one repetition)
         self.timer.setSingleShot(True)
-        # Quand le timer fini, appeller la fonction pour effacer
+        # Listen to the signal emitted when the timer has finished. Call the method specified in argument when this signal is emitted.
         self.timer.timeout.connect(method)
+        # Start the timer
         self.timer.start()
 
 
 
-    # This method searches for the text in the LineEdit (search box) in the municipality list.
+
+    # This method handles the "search box" (either municipality or coordinate).
+    # This method is called on every changes in the "search box" (when signal textChanges is emitted)
     def mun_search(self):
         text_to_search = self.dockwidget.munLineEdit.text().lower()
         self.dockwidget.munListWidget.clear()
         if (len(text_to_search) >= 4):
 
-            print "mun search"
-            print self.ManageUI.get_checked_top_radio_btn()
-
-            # Auto-complete feature when searching for a municipality. It populates the ListWidget with the results
+            # "Auto-complete" feature when searching for a municipality. It populates the ListWidget with the results
             if (self.ManageUI.get_checked_top_radio_btn() == "municipality"):
                 for i in self.Initialization.mun_list:
                     if (text_to_search in i[0:len(text_to_search)].lower()) or (text_to_search in i.lower()):
                         self.dockwidget.munListWidget.addItem(i)
 
-
+            # Search for a coordinate instead if "coordinate" radio button is selected
             if (self.ManageUI.get_checked_top_radio_btn() == "coordinate"):
+                try:
+                    # Transform the coordinate from the user-specified input CRS to the MapCanvas CRS
+                    self.ManageUI.transform_coordinates()
+                except:
+                    pass
+
                 self.get_intersects_geom()
 
 
 
 
-    # Here, I can use the geometries already fetched. They are in a list mun_list_geom, or something.
-    # I wrote all of this to replace an old method that made QGIS crash.
-    # Apparently, I need to .clone() the geometry
+
 
     def get_intersects_geom(self):
 
@@ -203,15 +213,18 @@ class MainProcess():
 
 
 
-
+    ###############################
+    ########################
+    #Inutile
+    #
     def get_feuillet_number(self):
         self.dockwidget.feuilListWidget.clear()
 
         # print selected_item
         self.get_intersects_geom()
 
-
-
+    ################
+    ###############
 
 
 

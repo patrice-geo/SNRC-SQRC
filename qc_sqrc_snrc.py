@@ -39,7 +39,7 @@ from initializing import Initialization
 from manage_ui import ManageUI
 from plugin_processing import MainProcess
 from qgis_interaction import InterractionQgis
-
+from get_point_map_tool import GetPointMapTool
 
 
 class SQRCSNRC:
@@ -99,12 +99,11 @@ class SQRCSNRC:
 
         # Initializing classes
         self.Initialization = Initialization(self.plugin_dir, self.iface)
-
-#    def __init__(self, dockwidget, iface, ManageUI, plugin_dir ):
         self.ManageUI = ManageUI(self.dockwidget, self.Initialization, self.iface)
         self.MainProcess = MainProcess(self.dockwidget, self.iface, self.ManageUI, self.Initialization, self.plugin_dir)
 
-        self.InterractionQgis = InterractionQgis(self.dockwidget, self.iface, self.ManageUI, self.plugin_dir)
+
+        self.InterractionQgis = InterractionQgis(self.dockwidget, self.iface, self.ManageUI, self.plugin_dir, self.Initialization)
 
         self.Initialization.set_gdal_encoding()
         self.Initialization.list_names_and_geoms()
@@ -122,6 +121,8 @@ class SQRCSNRC:
         # Setting the UI elements
         self.ManageUI.adjust_ui_elements(self.ManageUI.get_checked_top_radio_btn())
 
+
+
         ### Listen to UI signals ###
         self.dockwidget.munLineEdit.textChanged.connect(self.mun_text_changed)
         self.dockwidget.munListWidget.currentItemChanged.connect(self.mun_current_changed)
@@ -129,6 +130,7 @@ class SQRCSNRC:
         self.dockwidget.feuilListWidget.itemDoubleClicked.connect(self.feuil_double_clicked)
 
         self.dockwidget.coordToolButton.clicked.connect(self.coordToolButton_clicked)
+        self.dockwidget.crsToolButton.clicked.connect(self.crsToolButton_clicked)
 
         self.dockwidget.munRadioButton.toggled.connect(self.munRadioButton_toggled)
         self.dockwidget.coordRadioButton.toggled.connect(self.coordRadioButton_toggled)
@@ -339,10 +341,10 @@ class SQRCSNRC:
         try:
             if (str(self.dockwidget.munListWidget.currentItem().text()).strip != "") and (self.dockwidget.munListWidget.currentItem().text() != None):
                 self.ManageUI.selected_item = self.ManageUI.get_selected_mun()
-
         except:
             return
 
+        # If "municipality" is selected, get the map index for the selected municipality
         if (self.ManageUI.get_checked_top_radio_btn() == "municipality"):
             self.MainProcess.timed_action(500, self.MainProcess.get_feuillet_number)
 
@@ -353,10 +355,11 @@ class SQRCSNRC:
 
 
 
-    # When the Municipality radio button is checked
+    # When the Municipality radio button is toggled
     def munRadioButton_toggled(self):
-
+        # Verify if the radio button is checked or not
         if (self.dockwidget.munRadioButton.isChecked()):
+            # Set the GUI elements for the selected radio button
             self.ManageUI.adjust_ui_elements(self.ManageUI.get_checked_top_radio_btn())
             #self.MainProcess.timed_action(1000, self.MainProcess.get_intersects_geom)
         else:
@@ -365,10 +368,13 @@ class SQRCSNRC:
 
 
 
-    # When the Coordinates radio button is checked
+    # When the Coordinates radio button is toggled
     def coordRadioButton_toggled(self):
+        # Verify if the radio button is checked or not
         if (self.dockwidget.coordRadioButton.isChecked()):
+            # Set the GUI elements for the selected radio button
             self.ManageUI.adjust_ui_elements(self.ManageUI.get_checked_top_radio_btn())
+            # When "coordinate" is selected, don't wait for an item selection and get the map index
             self.MainProcess.timed_action(1000, self.MainProcess.get_intersects_geom)
         else:
             self.ManageUI.coordinate_text = self.dockwidget.munLineEdit.text()
@@ -376,9 +382,11 @@ class SQRCSNRC:
 
 
 
-    # When the Extent radio button is checked
+    # When the Extent radio button is toggled
     def extRadioButton_toggled(self):
+        # Verify if the radio button is checked or not
         if (self.dockwidget.extRadioButton.isChecked()):
+            # Set the GUI elements for the selected radio button
             self.ManageUI.adjust_ui_elements(self.ManageUI.get_checked_top_radio_btn())
             self.MainProcess.timed_action(1000, self.MainProcess.get_intersects_geom)
 
@@ -391,7 +399,8 @@ class SQRCSNRC:
 
     # When coordToolButton is clicked
     def coordToolButton_clicked(self):
-        self.ManageUI.start_coord_capture()
+        self.coordinate_capture()
+        # self.ManageUI.start_coord_capture()
 
 
 
@@ -449,6 +458,8 @@ class SQRCSNRC:
 
 
 
+    def crsToolButton_clicked(self):
+        self.ManageUI.select_input_crs()
 
 
 
@@ -459,13 +470,17 @@ class SQRCSNRC:
 
 
 
+    def coordinate_capture(self):
 
-
-
-
-
-
-
+        self.ManageUI.set_to_map_crs()
+        # Get the current MapTool to set it back after the coordinate is captured. This is done in the CanvasReleaseEvent in the GetPointMapTool.
+        self.currentMapTool = self.iface.mapCanvas().mapTool()
+        # Intance of the MapTool object to capture the point
+        self.GetPointMapTool = GetPointMapTool(self.iface.mapCanvas(), self.iface, self.dockwidget, self.currentMapTool)
+        # Set the MapTool to capture the point
+        self.iface.mapCanvas().setMapTool(self.GetPointMapTool)
+        # Write the captured point in the "search box"
+        self.dockwidget.munLineEdit.setText(self.GetPointMapTool.coordCaptured)
 
 
 

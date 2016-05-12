@@ -2,6 +2,11 @@
 
 from PyQt4.QtGui import QCursor
 from PyQt4.QtCore import *
+from qgis.gui import QgsGenericProjectionSelector
+
+import ogr
+import osr
+
 
 class ManageUI:
 
@@ -10,12 +15,13 @@ class ManageUI:
     captured_coordinate = ""
     selected_item = ""
     coord_captured = ""
+    input_epsg = ""
 
     def __init__(self, dockwidget, Initialization, iface):
         self.dockwidget = dockwidget
         self.Initialization = Initialization
         self.iface = iface
-
+        self.input_epsg = self.Initialization.get_project_epsg()
 
 
 
@@ -71,15 +77,17 @@ class ManageUI:
             self.dockwidget.munLineEdit.setEnabled(True)
             self.dockwidget.munListWidget.setEnabled(True)
             self.dockwidget.munLineEdit.setText(self.municipality_text)
+            self.dockwidget.crsToolButton.setEnabled(False)
         if (checked_button == "coordinate"):
             self.dockwidget.coordToolButton.setEnabled(True)
             self.dockwidget.crsToolButton.show()
             self.dockwidget.epsgLabel.show()
             self.dockwidget.searchLabel.setText(u"Rechercher une coordonnée")
             self.dockwidget.munLineEdit.setEnabled(True)
-            self.dockwidget.epsgLabel.setText(self.Initialization.get_project_epsg())
+            self.dockwidget.epsgLabel.setText(self.input_epsg)
             self.dockwidget.munListWidget.setEnabled(True)
             self.dockwidget.munLineEdit.setText(self.coordinate_text)
+            self.dockwidget.crsToolButton.setEnabled(True)
         if (checked_button == "extent"):
             self.dockwidget.coordToolButton.setEnabled(False)
             self.dockwidget.crsToolButton.hide()
@@ -87,19 +95,8 @@ class ManageUI:
             self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
             self.dockwidget.munLineEdit.setEnabled(False)
             self.dockwidget.munListWidget.setEnabled(True)
+            self.dockwidget.crsToolButton.setEnabled(False)
 
-
-
-
-
-
-
-
-
-
-    # Change EPSG code label according to the selected CRS
-    def change_epsg(self):
-        pass
 
 
 
@@ -111,6 +108,9 @@ class ManageUI:
         self.previous_cursor = self.iface.mapCanvas().cursor()
         cursor = QCursor(Qt.CrossCursor)
         self.iface.mapCanvas().setCursor(cursor)
+
+        self.input_epsg = self.Initialization.get_project_epsg()
+        self.dockwidget.epsgLabel.setText(self.input_epsg)
 
 
 
@@ -140,6 +140,60 @@ class ManageUI:
 
         # Write coordinate into the search box
         self.dockwidget.munLineEdit.setText(str(self.captured_coordinate))
+
+
+
+
+
+    def select_input_crs(self):
+
+        projSelector = QgsGenericProjectionSelector()
+        projSelector.exec_()
+        self.input_epsg = projSelector.selectedAuthId()
+        self.dockwidget.epsgLabel.setText(projSelector.selectedAuthId())
+
+
+
+
+    def set_to_map_crs(self):
+        self.dockwidget.epsgLabel.setText(self.Initialization.get_project_epsg())
+        self.input_epsg = self.Initialization.get_project_epsg()
+
+
+
+    def transform_coordinates(self):
+        source_epsg = int(self.input_epsg)
+        dest_epsg = int(self.Initialization.get_project_epsg().strip("EPSG: "))
+
+        if (source_epsg != dest_epsg):
+            coord = self.dockwidget.munLineEdit.text()
+
+            point = ogr.Geometry(ogr.wkbPoint)
+            point.AddPoint(float(self.dockwidget.munLineEdit.text().split(',')[0]), float(self.dockwidget.munLineEdit.text().split(',')[1]))
+
+
+            inSpatialRef = osr.SpatialReference()
+            inSpatialRef.ImportFromEPSG(source_epsg)
+
+
+            outSpatialRef = osr.SpatialReference()
+            outSpatialRef.ImportFromEPSG(dest_epsg)
+
+            coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
+
+            point.Transform(coordTransform)
+
+            print point.ExportToWkt()
+
+
+
+
+
+
+
+
+
+
 
 
 
