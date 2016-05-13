@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47cda69e-ae6c-4ff1-9826-196ffd3c1452" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/get_point_map_tool.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qc_sqrc_snrc_dockwidget_base.ui" afterPath="$PROJECT_DIR$/qc_sqrc_snrc_dockwidget_base.ui" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/initializing.py" afterPath="$PROJECT_DIR$/initializing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage_ui.py" afterPath="$PROJECT_DIR$/manage_ui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/metadata.txt" afterPath="$PROJECT_DIR$/metadata.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin_processing.py" afterPath="$PROJECT_DIR$/plugin_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qc_sqrc_snrc.py" afterPath="$PROJECT_DIR$/qc_sqrc_snrc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qgis_interaction.py" afterPath="$PROJECT_DIR$/qgis_interaction.py" />
     </list>
     <ignored path="SQRCSNRC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +31,9 @@
       <file leaf-file-name="qc_sqrc_snrc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="474" column="38" selection-start-line="474" selection-start-column="38" selection-end-line="474" selection-end-column="38" />
+            <state vertical-scroll-proportion="-10.857142">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="42" />
               <folding>
-                <element signature="e#1195#1274#0" expanded="true" />
                 <element signature="e#1846#2096#1" expanded="false" />
                 <element signature="e#6174#6605#0" expanded="false" />
                 <element signature="e#6855#8873#0" expanded="false" />
@@ -53,8 +49,8 @@
       <file leaf-file-name="initializing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/initializing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.857142">
+              <caret line="50" column="74" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="74" />
               <folding>
                 <element signature="e#25#36#0" expanded="true" />
               </folding>
@@ -62,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_point_map_tool.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="get_point_map_tool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_point_map_tool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88535035">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
               <folding>
                 <element signature="e#25#45#0" expanded="true" />
               </folding>
@@ -86,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage_ui.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manage_ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="151" column="55" selection-start-line="151" selection-start-column="55" selection-end-line="151" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.23632385">
+              <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
               <folding>
                 <element signature="e#25#56#0" expanded="true" />
               </folding>
@@ -101,8 +97,8 @@
       <file leaf-file-name="plugin_processing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugin_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state vertical-scroll-proportion="-1.1428572">
+              <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
               <folding>
                 <element signature="e#25#56#0" expanded="true" />
               </folding>
@@ -130,12 +126,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/plugin_processing.py" />
         <option value="$PROJECT_DIR$/qgis_interaction.py" />
         <option value="$PROJECT_DIR$/initializing.py" />
         <option value="$PROJECT_DIR$/qc_sqrc_snrc.py" />
-        <option value="$PROJECT_DIR$/manage_ui.py" />
         <option value="$PROJECT_DIR$/get_point_map_tool.py" />
+        <option value="$PROJECT_DIR$/plugin_processing.py" />
+        <option value="$PROJECT_DIR$/manage_ui.py" />
       </list>
     </option>
   </component>
@@ -466,19 +462,26 @@
       <option name="project" value="LOCAL" />
       <updated>1462808139546</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added custom MapTool">
+      <created>1463071658637</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1463071658637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10010649" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26464325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26464325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -487,7 +490,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -511,7 +513,8 @@
     <MESSAGE value="Added icons" />
     <MESSAGE value="New Initialization class" />
     <MESSAGE value="Working classes!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working classes!" />
+    <MESSAGE value="Added custom MapTool" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added custom MapTool" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -531,7 +534,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -578,7 +580,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -635,7 +636,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="377" column="22" selection-start-line="377" selection-start-column="22" selection-end-line="377" selection-end-column="43" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -692,7 +692,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -709,31 +708,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
-            <element signature="e#1846#2096#1" expanded="false" />
-            <element signature="e#6174#6605#0" expanded="false" />
-            <element signature="e#6855#8873#0" expanded="false" />
-            <element signature="e#6855#8305#1" expanded="false" />
-            <element signature="e#8907#9196#0" expanded="false" />
-            <element signature="e#9316#9790#0" expanded="false" />
-            <element signature="e#9823#10170#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -757,7 +731,29 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -781,7 +777,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -798,7 +793,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -815,31 +809,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
-            <element signature="e#1846#2096#1" expanded="false" />
-            <element signature="e#6174#6605#0" expanded="false" />
-            <element signature="e#6855#8873#0" expanded="false" />
-            <element signature="e#6855#8305#1" expanded="false" />
-            <element signature="e#8907#9196#0" expanded="false" />
-            <element signature="e#9316#9790#0" expanded="false" />
-            <element signature="e#9823#10170#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/peregrinefalcon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -863,7 +832,29 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/peregrinefalcon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -1043,16 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="e#25#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qgis_interaction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1063,32 +1044,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/initializing.py">
+    <entry file="file://$PROJECT_DIR$/get_point_map_tool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding>
-            <element signature="e#25#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="151" column="55" selection-start-line="151" selection-start-column="55" selection-end-line="151" selection-end-column="55" />
-          <folding>
-            <element signature="e#25#56#0" expanded="true" />
+            <element signature="e#25#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="474" column="38" selection-start-line="474" selection-start-column="38" selection-end-line="474" selection-end-column="38" />
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="42" />
           <folding>
-            <element signature="e#1195#1274#0" expanded="true" />
             <element signature="e#1846#2096#1" expanded="false" />
             <element signature="e#6174#6605#0" expanded="false" />
             <element signature="e#6855#8873#0" expanded="false" />
@@ -1100,12 +1070,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_point_map_tool.py">
+    <entry file="file://$PROJECT_DIR$/initializing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88535035">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="50" column="74" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="74" />
           <folding>
-            <element signature="e#25#45#0" expanded="true" />
+            <element signature="e#25#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1428572">
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23632385">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
           </folding>
         </state>
       </provider>

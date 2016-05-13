@@ -48,11 +48,11 @@ class MainProcess:
 
             # Search for a coordinate instead if "coordinate" radio button is selected
             if (self.ManageUI.get_checked_top_radio_btn() == "coordinate"):
-                try:
+               # try:
                     # Transform the coordinate from the user-specified input CRS to the MapCanvas CRS
-                    self.ManageUI.transform_coordinates()
-                except:
-                    pass
+                self.ManageUI.transform_coordinates(int(self.ManageUI.input_epsg.strip("EPSG: ")), int(self.Initialization.get_project_epsg().strip("EPSG: ")))
+                #except:
+                 #   pass
 
                 self.get_intersects_geom()
 
@@ -88,14 +88,12 @@ class MainProcess:
 
             # Clear the "Municipality" listWidget
             self.dockwidget.munListWidget.clear()
-
             # Create a geometry from the selected point
             geom = ogr.Geometry(ogr.wkbPoint)
 
             try:
                 # Get the search box text and "split" it
-                splitted = str(self.dockwidget.munLineEdit.text()).split(',')
-
+                splitted = self.ManageUI.transform_coordinates(int(self.ManageUI.input_epsg.strip('EPSG:')), int(self.Initialization.get_project_epsg().strip('EPSG:')))
                 # Add a point in the geometry
                 geom.AddPoint(float(splitted[0]), float(splitted[1]))
             except:

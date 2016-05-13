@@ -73,7 +73,7 @@ class ManageUI:
             self.dockwidget.coordToolButton.setEnabled(False)
             self.dockwidget.crsToolButton.hide()
             self.dockwidget.epsgLabel.hide()
-            self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
+            self.dockwidget.searchLabel.setText(u"Search municipality:")
             self.dockwidget.munLineEdit.setEnabled(True)
             self.dockwidget.munListWidget.setEnabled(True)
             self.dockwidget.munLineEdit.setText(self.municipality_text)
@@ -82,9 +82,9 @@ class ManageUI:
             self.dockwidget.coordToolButton.setEnabled(True)
             self.dockwidget.crsToolButton.show()
             self.dockwidget.epsgLabel.show()
-            self.dockwidget.searchLabel.setText(u"Rechercher une coordonnée")
+            self.dockwidget.searchLabel.setText(u"Search coordinate:")
             self.dockwidget.munLineEdit.setEnabled(True)
-            self.dockwidget.epsgLabel.setText(self.input_epsg)
+            self.dockwidget.epsgLabel.setText("Input " + self.input_epsg)
             self.dockwidget.munListWidget.setEnabled(True)
             self.dockwidget.munLineEdit.setText(self.coordinate_text)
             self.dockwidget.crsToolButton.setEnabled(True)
@@ -92,7 +92,7 @@ class ManageUI:
             self.dockwidget.coordToolButton.setEnabled(False)
             self.dockwidget.crsToolButton.hide()
             self.dockwidget.epsgLabel.hide()
-            self.dockwidget.searchLabel.setText(u"Rechercher une municipalité")
+            self.dockwidget.searchLabel.setText(u"Search extent")
             self.dockwidget.munLineEdit.setEnabled(False)
             self.dockwidget.munListWidget.setEnabled(True)
             self.dockwidget.crsToolButton.setEnabled(False)
@@ -150,40 +150,45 @@ class ManageUI:
         projSelector = QgsGenericProjectionSelector()
         projSelector.exec_()
         self.input_epsg = projSelector.selectedAuthId()
-        self.dockwidget.epsgLabel.setText(projSelector.selectedAuthId())
+        self.dockwidget.epsgLabel.setText("Input " + projSelector.selectedAuthId())
+        self.dockwidget.munLineEdit.clear()
 
 
 
 
     def set_to_map_crs(self):
-        self.dockwidget.epsgLabel.setText(self.Initialization.get_project_epsg())
+        self.dockwidget.epsgLabel.setText("Input " + self.Initialization.get_project_epsg())
         self.input_epsg = self.Initialization.get_project_epsg()
 
 
 
-    def transform_coordinates(self):
-        source_epsg = int(self.input_epsg)
-        dest_epsg = int(self.Initialization.get_project_epsg().strip("EPSG: "))
+    def transform_coordinates(self, source_epsg, dest_epsg):
 
-        if (source_epsg != dest_epsg):
-            coord = self.dockwidget.munLineEdit.text()
+        coord = self.dockwidget.munLineEdit.text()
 
-            point = ogr.Geometry(ogr.wkbPoint)
-            point.AddPoint(float(self.dockwidget.munLineEdit.text().split(',')[0]), float(self.dockwidget.munLineEdit.text().split(',')[1]))
+        point = ogr.Geometry(ogr.wkbPoint)
+        try:
+            point.AddPoint(float(coord.split(',')[0]), float(coord.split(',')[1]))
+        except:
+            point.AddPoint(float(coord.split(' ')[0]), float(coord.split(' ')[1]))
+
+        inSpatialRef = osr.SpatialReference()
+        inSpatialRef.ImportFromEPSG(source_epsg)
 
 
-            inSpatialRef = osr.SpatialReference()
-            inSpatialRef.ImportFromEPSG(source_epsg)
+        outSpatialRef = osr.SpatialReference()
+        outSpatialRef.ImportFromEPSG(dest_epsg)
 
+        coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
 
-            outSpatialRef = osr.SpatialReference()
-            outSpatialRef.ImportFromEPSG(dest_epsg)
+        point.Transform(coordTransform)
 
-            coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
+        transformed_coords = str(point.ExportToWkt()).strip('POINT( ')
+        transformed_coords = transformed_coords.strip(' 0)')
+        transformed_coords = transformed_coords.split(' ')
 
-            point.Transform(coordTransform)
+        return transformed_coords
 
-            print point.ExportToWkt()
 
 
 
