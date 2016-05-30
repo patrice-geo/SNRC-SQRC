@@ -9,12 +9,12 @@
 [general]
 name=Quebec SQRC-SNRC
 qgisMinimumVersion=2.0
-description=Search for a city name in Quebec, Canada and get the SQRC/SNRC map number
-version=0.1
+description=In Quebec, Canada, you can search for a city name, a point coordinate or use the map canvas extent to get the SNRC (Canada 1:50 000) or SQRC (Quebec 1:20 000) map index.
+version=0.8
 author=Patrice Pineault
 email=patrice.pineault@usherbrooke.ca
 
-about=Search for a city name in Quebec, Canada and get the SQRC/SNRC map number
+about=None
 
 tracker=https://github.com/patrice-geo/SNRC-SQRC
 repository=https://github.com/patrice-geo/SNRC-SQRC
@@ -26,7 +26,7 @@ repository=https://github.com/patrice-geo/SNRC-SQRC
 # changelog=
 
 # Tags are comma separated with spaces allowed
-tags=SQRC SNRC Quebec Québec Canada Feuillet
+tags=SQRC SNRC Quebec Québec Canada Feuillet Index
 
 homepage=https://github.com/patrice-geo/SNRC-SQRC
 category=Plugins

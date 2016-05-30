@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47cda69e-ae6c-4ff1-9826-196ffd3c1452" name="Default" comment="Added icons">
+    <list default="true" id="47cda69e-ae6c-4ff1-9826-196ffd3c1452" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qc_sqrc_snrc_dockwidget_base.ui" afterPath="$PROJECT_DIR$/qc_sqrc_snrc_dockwidget_base.ui" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage_ui.py" afterPath="$PROJECT_DIR$/manage_ui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/metadata.txt" afterPath="$PROJECT_DIR$/metadata.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin_processing.py" afterPath="$PROJECT_DIR$/plugin_processing.py" />
     </list>
     <ignored path="SQRCSNRC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,13 +28,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="qc_sqrc_snrc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="qc_sqrc_snrc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2767441">
-              <caret line="591" column="0" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.857142">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="42" />
               <folding>
-                <element signature="e#1195#1282#0" expanded="true" />
+                <element signature="e#1846#2096#1" expanded="false" />
+                <element signature="e#6174#6605#0" expanded="false" />
+                <element signature="e#6855#8873#0" expanded="false" />
+                <element signature="e#6855#8305#1" expanded="false" />
+                <element signature="e#8907#9196#0" expanded="false" />
+                <element signature="e#9316#9790#0" expanded="false" />
+                <element signature="e#9823#10170#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="initializing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/initializing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.857142">
+              <caret line="50" column="74" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="74" />
+              <folding>
+                <element signature="e#25#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_point_map_tool.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/get_point_map_tool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+              <folding>
+                <element signature="e#25#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qgis_interaction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qgis_interaction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="e#25#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage_ui.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manage_ui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.23632385">
+              <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+              <folding>
+                <element signature="e#25#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin_processing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin_processing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1428572">
+              <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+              <folding>
+                <element signature="e#25#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,13 +108,30 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/qgis_interaction.py" />
+        <option value="$PROJECT_DIR$/initializing.py" />
         <option value="$PROJECT_DIR$/qc_sqrc_snrc.py" />
+        <option value="$PROJECT_DIR$/get_point_map_tool.py" />
+        <option value="$PROJECT_DIR$/plugin_processing.py" />
+        <option value="$PROJECT_DIR$/manage_ui.py" />
       </list>
     </option>
   </component>
@@ -54,8 +141,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="998" />
+    <option name="x" value="1280" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -82,7 +170,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -103,7 +191,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,6 +270,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -302,6 +395,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -336,26 +432,62 @@
       <option name="project" value="LOCAL" />
       <updated>1462767723919</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added icons">
+      <created>1462767751728</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1462767751728</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added icons">
+      <created>1462768534256</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1462768534256</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added icons">
+      <created>1462768722025</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1462768722025</updated>
+    </task>
+    <task id="LOCAL-00008" summary="New Initialization class">
+      <created>1462769610695</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1462769610695</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Working classes!">
+      <created>1462808139546</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1462808139546</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added custom MapTool">
+      <created>1463071658637</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1463071658637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="998" extended-state="6" />
-    <editor active="false" />
+    <frame x="1280" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1453958" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26494345" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10010649" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26464325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -379,37 +511,20 @@
     <MESSAGE value="UI design and functionnalities" />
     <MESSAGE value="Major changes" />
     <MESSAGE value="Added icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added icons" />
+    <MESSAGE value="New Initialization class" />
+    <MESSAGE value="Working classes!" />
+    <MESSAGE value="Added custom MapTool" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added custom MapTool" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
+          <caret line="507" column="0" selection-start-line="507" selection-start-column="0" selection-end-line="507" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -419,16 +534,156 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+    <entry file="file://$PROJECT_DIR$/initializing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
-          <folding />
+          <caret line="166" column="30" selection-start-line="166" selection-start-column="28" selection-end-line="166" selection-end-column="30" />
+          <folding>
+            <element signature="e#25#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qgis_interaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="e#25#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="48" selection-start-line="112" selection-start-column="48" selection-end-line="112" selection-end-column="48" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+          <folding>
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/initializing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="30" selection-start-line="166" selection-start-column="28" selection-end-line="166" selection-end-column="30" />
+          <folding>
+            <element signature="e#25#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qgis_interaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="e#25#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="377" column="22" selection-start-line="377" selection-start-column="22" selection-end-line="377" selection-end-column="43" />
+          <folding>
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/initializing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="19" />
+          <folding>
+            <element signature="e#25#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qgis_interaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="e#25#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="252" column="34" selection-start-line="252" selection-start-column="34" selection-end-line="252" selection-end-column="34" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -437,7 +692,75 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -446,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="539" column="0" selection-start-line="539" selection-start-column="0" selection-end-line="540" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -455,7 +777,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -465,7 +793,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -475,7 +809,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -492,7 +832,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -509,7 +855,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -554,14 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="565" column="12" selection-start-line="565" selection-start-column="12" selection-end-line="565" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/autofs/Stuff/geomatique/projects/Lutra Python Workshop Files/99__Complete Plugin/NearestFeature/metadata.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -594,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9976745">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,16 +945,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="83" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/prototron/.qgis2/python/plugins/SQRCSNRC/initializing.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/prototron/.qgis2/python/plugins/SQRCSNRC/initializing.py</OriginalElement>
+          <nodes>
+            <node x="" y="">initializing.Initialization</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="84.5" y="14.0" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/prototron/.qgis2/python/plugins/SQRCSNRC">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/prototron/.qgis2/python/plugins/SQRCSNRC</OriginalElement>
+          <nodes>
+            <node x="" y="">PyQt4.QtGui.QDockWidget.QDockWidget</node>
+            <node x="" y="">_abcoll.Callable</node>
+            <node x="" y="">test.test_qgis_environment.QGISTest</node>
+            <node x="" y="">qgis_interaction.InterractionQgis</node>
+            <node x="" y="">plugin_processing.MainProcess</node>
+            <node x="" y="">PyQt4.QtCore.QObject.QObject</node>
+            <node x="" y="">FORM_CLASS</node>
+            <node x="" y="">initializing.Initialization</node>
+            <node x="" y="">test.test_resources.SQRCSNRCDialogTest</node>
+            <node x="" y="">manage_ui.ManageUI</node>
+            <node x="" y="">unittest.case.TestCase</node>
+            <node x="" y="">PyQt4.QtGui.QWidget.QWidget</node>
+            <node x="" y="">object</node>
+            <node x="" y="">PyQt4.QtGui.QPaintDevice.QPaintDevice</node>
+            <node x="" y="">test.test_init.TestInit</node>
+            <node x="" y="">qc_sqrc_snrc_dockwidget.SQRCSNRCDockWidget</node>
+            <node x="" y="">qc_sqrc_snrc.SQRCSNRC</node>
+            <node x="" y="">_abcoll.Hashable</node>
+            <node x="" y="">test.qgis_interface.QgisInterface</node>
+            <node x="" y="">test.test_qc_sqrc_snrc_dockwidget.SQRCSNRCDockWidgetTest</node>
+            <node x="" y="">test.test_translations.SafeTranslationsTest</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8979193758127438" x="759.0" y="437.5112237509051" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/prototron/.qgis2/python/plugins/SQRCSNRC/test">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/prototron/.qgis2/python/plugins/SQRCSNRC/test</OriginalElement>
+          <nodes>
+            <node x="" y="">_abcoll.Hashable</node>
+            <node x="" y="">test.test_qc_sqrc_snrc_dockwidget.SQRCSNRCDockWidgetTest</node>
+            <node x="" y="">test.test_qgis_environment.QGISTest</node>
+            <node x="" y="">test.qgis_interface.QgisInterface</node>
+            <node x="" y="">test.test_init.TestInit</node>
+            <node x="" y="">PyQt4.QtCore.QObject.QObject</node>
+            <node x="" y="">_abcoll.Callable</node>
+            <node x="" y="">test.test_translations.SafeTranslationsTest</node>
+            <node x="" y="">object</node>
+            <node x="" y="">test.test_resources.SQRCSNRCDialogTest</node>
+            <node x="" y="">unittest.case.TestCase</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8979193758127438" x="759.0" y="206.5" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qgis-plugin-peregrine-falcon/faucon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.01910828">
+          <caret line="507" column="0" selection-start-line="507" selection-start-column="0" selection-end-line="507" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qgis_interaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#25#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_point_map_tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="e#25#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qc_sqrc_snrc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2767441">
-          <caret line="591" column="0" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="42" />
           <folding>
-            <element signature="e#1195#1282#0" expanded="true" />
+            <element signature="e#1846#2096#1" expanded="false" />
+            <element signature="e#6174#6605#0" expanded="false" />
+            <element signature="e#6855#8873#0" expanded="false" />
+            <element signature="e#6855#8305#1" expanded="false" />
+            <element signature="e#8907#9196#0" expanded="false" />
+            <element signature="e#9316#9790#0" expanded="false" />
+            <element signature="e#9823#10170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/initializing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="50" column="74" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="74" />
+          <folding>
+            <element signature="e#25#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1428572">
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23632385">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+          <folding>
+            <element signature="e#25#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
